@@ -23,7 +23,6 @@ const Subject = () => {
   const scheduleTest = async (subjectId) => {
     try {
       const resp = await requestTest({
-        userId: "657553a07e269bf7df4524c2",
         subjectId: subjectId,
       });
       console.log("create test ", resp);

@@ -45,10 +45,10 @@ export const getStartTestToken = async (testRequestId) => {
   );
 };
 
-export const isValidLink = async (token) => {
-  return await axios.get(
+export const isValidLink = async (data) => {
+  return await axios.post(
     `${process.env.REACT_APP_BACKEND_URL}testRequest/testLink-status`,
-    { token: token }
+    data
   );
 };
 
@@ -59,8 +59,8 @@ export const getTestQuestions = async (testId) => {
 };
 
 export const createReport = async (data) => {
-  return await axios.get(
-    `${process.env.REACT_APP_BACKEND_URL}resport/create`,
+  return await axios.post(
+    `${process.env.REACT_APP_BACKEND_URL}report/create`,
     data
   );
 };

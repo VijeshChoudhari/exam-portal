@@ -16,7 +16,9 @@ const Exam = () => {
         throw new Error(resp.data.messsage);
       }
       navigate(`${resp.data.data.token}`);
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const checkIsLinkValid = async () => {
@@ -44,7 +46,11 @@ const Exam = () => {
           <div className="flex justify-between">
             <div className="text-xl font-bold">{param.subjectName}</div>
             <div>
-              <Button variant="contained" type="button" onClick={() => {}}>
+              <Button
+                variant="contained"
+                type="button"
+                onClick={() => startTest()}
+              >
                 Start Test
               </Button>
             </div>
